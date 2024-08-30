@@ -1,0 +1,46 @@
+name: court_pass
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  cupertino_icons: ^1.0.6
+
+  # Added intl package for date formatting
+  intl: ^0.18.0 # Check for the latest version on pub.dev
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_svg: ^1.0.0
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Light.ttf
+          weight: 200
