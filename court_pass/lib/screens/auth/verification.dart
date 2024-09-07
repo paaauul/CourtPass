@@ -2,9 +2,9 @@
 
 import 'dart:ui';
 
-import 'package:court_pass/custom%20widgets/back_buttons.dart';
-import 'package:court_pass/custom%20widgets/backgrounds.dart';
-import 'package:court_pass/custom%20widgets/buttons.dart';
+import 'package:court_pass/custom%20widgets/buttons/back_buttons.dart';
+import 'package:court_pass/custom%20widgets/backgrounds/backgrounds.dart';
+import 'package:court_pass/custom%20widgets/buttons/buttons.dart';
 import 'package:court_pass/screens/pages/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

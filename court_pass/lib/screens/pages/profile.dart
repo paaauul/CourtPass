@@ -1,16 +1,19 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:court_pass/custom%20widgets/photos_backgrounds.dart';
-import 'package:court_pass/custom%20widgets/textfield_with_edit.dart';
+import 'package:court_pass/custom%20widgets/backgrounds/photos_backgrounds.dart';
+import 'package:court_pass/custom%20widgets/text_fields/textfield_with_edit.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
     var screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFFFFAFA),
       body: Stack(
         children: [

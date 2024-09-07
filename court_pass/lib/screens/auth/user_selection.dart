@@ -2,10 +2,10 @@
 
 import 'dart:ui';
 
-import 'package:court_pass/custom%20widgets/backgrounds.dart';
-import 'package:court_pass/custom%20widgets/buttons.dart';
-import 'package:court_pass/screens/auth/facility_login.dart';
-import 'package:court_pass/screens/auth/sportsperson_signup.dart';
+import 'package:court_pass/custom%20widgets/backgrounds/backgrounds.dart';
+import 'package:court_pass/custom%20widgets/buttons/buttons.dart';
+import 'package:court_pass/screens/auth/facility/facility_login.dart';
+import 'package:court_pass/screens/auth/sports_person/sportsperson_signup.dart';
 import 'package:flutter/material.dart';
 
 class UserSelectionPage extends StatelessWidget{
