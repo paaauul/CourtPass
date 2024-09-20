@@ -1,8 +1,11 @@
-import 'package:court_pass/screens/pages/messaging/conversation.dart';
+import 'package:court_pass/screens/pages/activities/activities.dart';
+import 'package:court_pass/screens/pages/history/history.dart';
+import 'package:court_pass/screens/pages/home.dart';
 import 'package:court_pass/screens/pages/messaging/convo.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:court_pass/screens/pages/messaging/messages.dart';
+import 'package:court_pass/screens/pages/nav_bar.dart';
+import 'package:court_pass/screens/pages/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Messages extends StatefulWidget {
   const Messages({super.key});
@@ -12,6 +15,22 @@ class Messages extends StatefulWidget {
 }
 
 class _MessagesState extends State<Messages> {
+  int _selectedIndex = 3;
+
+  List<Widget> _pages = [
+    Home(),
+    Activities(),
+    HistoryPage(),
+    Messages(),
+    ProfilePage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
@@ -22,7 +41,7 @@ class _MessagesState extends State<Messages> {
       body: Stack(
         children: [
           Positioned(
-            top: screenHeight * 0.055,
+            top: screenHeight * 0.068,
             left: screenWidth * 0.07,
             child: Text(
               "Messages",
@@ -34,8 +53,9 @@ class _MessagesState extends State<Messages> {
             ),
           ),
 
+          //SEARCH
           Positioned(
-            top: screenHeight * 0.062,
+            top: screenHeight * 0.076,
             right: screenWidth * 0.07,
             child: GestureDetector(
               onTap: () {},
@@ -47,7 +67,7 @@ class _MessagesState extends State<Messages> {
           ),
           
           Positioned(
-            top: screenHeight * 0.12,
+            top: screenHeight * 0.14,
             left: 0,
             right: 0,
             bottom: 0,

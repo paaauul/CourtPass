@@ -24,7 +24,7 @@ class PositiveButton extends StatelessWidget {
           ],
           stops: [-0.5, 0.92],
         ),
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(14.0),
       ),
       child: Center(
         child: Text(

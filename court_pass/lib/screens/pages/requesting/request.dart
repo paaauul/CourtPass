@@ -91,7 +91,7 @@ class _RequestState extends State<Request> {
                 Text(
                   "Request Reservation",
                   style: TextStyle(
-                    color: Color(0xFF2D2D35),
+                    color: const Color(0xFF2D2D35),
                     fontFamily: "Poppins",
                     fontSize: screenWidth * 0.08,
                     fontWeight: FontWeight.w800

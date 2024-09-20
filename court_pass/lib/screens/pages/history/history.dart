@@ -1,6 +1,12 @@
+import 'package:court_pass/screens/pages/activities/activities.dart';
+import 'package:court_pass/screens/pages/history/history.dart';
+import 'package:court_pass/screens/pages/history/past_activity.dart';
+import 'package:court_pass/screens/pages/home.dart';
+import 'package:court_pass/screens/pages/messaging/messages.dart';
+import 'package:court_pass/screens/pages/nav_bar.dart';
+import 'package:court_pass/screens/pages/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'past_activity.dart'; // Make sure the path is correct
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
@@ -10,6 +16,7 @@ class HistoryPage extends StatefulWidget {
 }
 
 class _HistoryPageState extends State<HistoryPage> {
+
   DateTime _selectedDate = DateTime.now();
 
   Future<void> _selectDate(BuildContext context) async {
@@ -42,7 +49,7 @@ class _HistoryPageState extends State<HistoryPage> {
           Positioned(
             top: 0, left: 0, right: 0,
             child: Container(
-              height: screenHeight * 0.11,
+              height: screenHeight * 0.13,
               width: screenWidth,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -57,7 +64,7 @@ class _HistoryPageState extends State<HistoryPage> {
               child: GestureDetector(
                 onTap: () {},
                 child: Container(
-                  padding: EdgeInsets.only(right: screenWidth * 0.05, top: screenWidth * 0.065),
+                  padding: EdgeInsets.only(right: screenWidth * 0.05, top: screenWidth * 0.1),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -75,7 +82,7 @@ class _HistoryPageState extends State<HistoryPage> {
 
           // SELECT DATE
           Positioned(
-            top: screenHeight * 0.13,
+            top: screenHeight * 0.15,
             left: 0, right: 0,
             child: Center(
               child: Text(
@@ -92,7 +99,7 @@ class _HistoryPageState extends State<HistoryPage> {
 
           // DATE PICKER
           Positioned(
-            top: screenHeight * 0.16,
+            top: screenHeight * 0.175,
             left: 0, right: 0,
             child: Center(
               child: GestureDetector(
@@ -140,12 +147,12 @@ class _HistoryPageState extends State<HistoryPage> {
 
           // ACTIVITIES
           Positioned(
-            top: screenHeight * 0.21,
+            top: screenHeight * 0.23,
             left: 0,
             right: 0,
             bottom: 0,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.07),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
               child: ListView.builder(
                 itemCount: 10, // Number of items
                 itemBuilder: (context, index) {

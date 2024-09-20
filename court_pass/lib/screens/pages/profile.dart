@@ -1,11 +1,22 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
 import 'package:court_pass/custom%20widgets/backgrounds/photos_backgrounds.dart';
 import 'package:court_pass/custom%20widgets/text_fields/textfield_with_edit.dart';
+import 'package:court_pass/screens/pages/activities/activities.dart';
+import 'package:court_pass/screens/pages/history/history.dart';
+import 'package:court_pass/screens/pages/messaging/messages.dart';
+import 'package:court_pass/screens/pages/nav_bar.dart';
+import 'package:court_pass/screens/pages/profile.dart';
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
+import 'home.dart';
+
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {

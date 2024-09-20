@@ -22,10 +22,8 @@ class SportsPersonLoginPage extends StatelessWidget{
     double textFieldHeight = screenHeight * 0.0645;
 
     double textFieldTextSize = screenWidth * 0.041;
-    double mediumTextSize = screenWidth * 0.038;
     double smallTextSize = screenWidth * 0.035;
     
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(

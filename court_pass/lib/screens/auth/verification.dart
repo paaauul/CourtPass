@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:court_pass/custom%20widgets/buttons/back_buttons.dart';
 import 'package:court_pass/custom%20widgets/backgrounds/backgrounds.dart';
 import 'package:court_pass/custom%20widgets/buttons/buttons.dart';
+import 'package:court_pass/screens/pages/home.dart';
 import 'package:court_pass/screens/pages/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -170,7 +171,7 @@ class _VerificationPageState extends State<VerificationPage> {
                 GestureDetector(
                   onTap: () {
                     if(_codeController.text == "123456"){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                         }
                   },
                   child: MainButton('Confirm')

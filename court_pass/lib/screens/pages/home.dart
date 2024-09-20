@@ -1,3 +1,8 @@
+import 'package:court_pass/screens/pages/activities/activities.dart';
+import 'package:court_pass/screens/pages/history/history.dart';
+import 'package:court_pass/screens/pages/messaging/messages.dart';
+import 'package:court_pass/screens/pages/nav_bar.dart';
+import 'package:court_pass/screens/pages/profile.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -8,6 +13,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
@@ -17,7 +23,6 @@ class _HomeState extends State<Home> {
       backgroundColor: Color(0xFFF5F5F5),
       body: Stack(
         children: [
-          
           // GRADIENT
           Positioned(
             top: 0,
@@ -40,9 +45,9 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-
         ],
       ),
     );
   }
 }
+

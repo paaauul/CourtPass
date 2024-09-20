@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Sport {
   late String sportName;
   late String sportIcon;

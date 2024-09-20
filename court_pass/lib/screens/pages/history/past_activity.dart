@@ -24,7 +24,7 @@ class _PastActivityState extends State<PastActivity> {
         child: Align(
           alignment: Alignment.topCenter,
           child: Container(
-          width: screenWidth * 0.86,
+          width: screenWidth * 0.9,
           height: screenHeight * 0.08,
           child: Row(
             children: [
@@ -48,7 +48,7 @@ class _PastActivityState extends State<PastActivity> {
                     "Pasingot ta Bai",
                     style: TextStyle(
                       color: const Color(0xFF13131A),
-                      fontSize: screenWidth * 0.05,
+                      fontSize: screenWidth * 0.048,
                       fontFamily: "Poppins",
                       fontWeight: FontWeight.w500
                     ),
@@ -58,7 +58,7 @@ class _PastActivityState extends State<PastActivity> {
                     "Sports Zone",
                     style: TextStyle(
                       color: const Color(0xFF434343),
-                      fontSize: screenWidth * 0.034,
+                      fontSize: screenWidth * 0.032,
                       fontFamily: "Poppins",
                       fontWeight: FontWeight.w500
                     ),
@@ -68,7 +68,7 @@ class _PastActivityState extends State<PastActivity> {
                     "Sep 14, 2023 | 9:00 AM - 11:00 AM",
                     style: TextStyle(
                       color: const Color(0xFF585858),
-                      fontSize: screenWidth * 0.034,
+                      fontSize: screenWidth * 0.032,
                       fontFamily: "Poppins",
                       fontWeight: FontWeight.w500
                     ),

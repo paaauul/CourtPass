@@ -25,7 +25,7 @@ class _ConversationState extends State<Conversation> {
             top: 0, left: 0, right: 0,
             child: Container(
               width: screenWidth,
-              height: screenHeight * 0.115,
+              height: screenHeight * 0.13,
               decoration: const BoxDecoration(
                 color: Color(0xFFFFFAFA),
                 boxShadow: [
@@ -43,7 +43,7 @@ class _ConversationState extends State<Conversation> {
 
                   //BACK BUTTON
                   Container(
-                    padding: EdgeInsets.only(left: screenWidth * 0.04, top: screenWidth * 0.08),
+                    padding: EdgeInsets.only(left: screenWidth * 0.04, top: screenWidth * 0.095),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.pop(context);
@@ -62,9 +62,9 @@ class _ConversationState extends State<Conversation> {
                    Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
-                      margin: EdgeInsets.only(left: screenWidth * 0.02, top: screenHeight * 0.034),
-                      width: screenWidth * 0.11,
-                      height: screenWidth * 0.11,
+                      margin: EdgeInsets.only(left: screenWidth * 0.02, top: screenHeight * 0.047),
+                      width: screenWidth * 0.1,
+                      height: screenWidth * 0.1,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -85,7 +85,7 @@ class _ConversationState extends State<Conversation> {
 
                   //TEXT
                   Padding(
-                    padding: EdgeInsets.only(top: screenHeight * 0.05),
+                    padding: EdgeInsets.only(top: screenHeight * 0.064),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -120,8 +120,9 @@ class _ConversationState extends State<Conversation> {
 
                   SizedBox(width: screenWidth * 0.086),
 
+                  //CALL
                   Padding(
-                    padding: EdgeInsets.only(top: screenHeight * 0.038),
+                    padding: EdgeInsets.only(top: screenHeight * 0.055),
                     child: GestureDetector(
                       onTap: () {
                       
@@ -151,8 +152,8 @@ class _ConversationState extends State<Conversation> {
                     
                   },
                   child: Container(
-                    width: screenWidth * 0.118,
-                    height: screenWidth * 0.118,
+                    width: screenWidth * 0.112,
+                    height: screenWidth * 0.112,
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: const Color(0xFF13131A),
@@ -186,7 +187,7 @@ class _ConversationState extends State<Conversation> {
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
                       color: const Color(0xFF13131A),
-                      width: 0.8
+                      width: 0.6
                     ),
                     color: const Color(0xFFFFFAFA),
                     boxShadow: const [
@@ -210,7 +211,7 @@ class _ConversationState extends State<Conversation> {
                           fontSize: screenWidth * 0.039,
                           fontWeight: FontWeight.w300
                         ),
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 17),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 17, vertical: 13),
                         border: InputBorder.none,
                       ),
                     ),
@@ -225,8 +226,8 @@ class _ConversationState extends State<Conversation> {
                     
                   },
                   child: Container(
-                    width: screenWidth * 0.118,
-                    height: screenWidth * 0.118,
+                    width: screenWidth * 0.112,
+                    height: screenWidth * 0.112,
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: const Color(0xFF13131A),
@@ -246,7 +247,7 @@ class _ConversationState extends State<Conversation> {
                     child: Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.020, vertical: screenWidth * 0.018),
+                        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.017, vertical: screenWidth * 0.015),
                         child: SvgPicture.asset(
                         'assets/icons/send.svg',
                         color: const Color(0xFF424141),
