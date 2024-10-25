@@ -1,12 +1,21 @@
-import 'package:court_pass/screens/auth/user_selection.dart';
-import 'package:court_pass/screens/pages/history/history.dart';
-import 'package:court_pass/screens/pages/home.dart';
-import 'package:court_pass/screens/pages/messaging/messages.dart';
-import 'package:court_pass/screens/pages/requesting/summary.dart';
+import 'package:court_pass/screens/sportsperson_main_page.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main(){
-   runApp(App());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
+
+  FirebaseFirestore.instance.settings = const Settings(
+    persistenceEnabled: true
+  );
+
+   runApp(const App());
 }
 
 class App extends StatelessWidget{
@@ -16,7 +25,7 @@ class App extends StatelessWidget{
   Widget build(BuildContext context){
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Messages(),
+      home: SportsPersonMainPage(),
     );
   }
 }

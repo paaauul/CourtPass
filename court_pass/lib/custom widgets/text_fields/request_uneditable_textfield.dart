@@ -16,8 +16,8 @@ class requestUneditableTextfield extends StatelessWidget {
     double textFieldWidth = screenWidth * 0.9;
     double textFieldHeight = screenHeight * 0.054;
 
-    double textFieldTextSize = screenWidth * 0.036;
-    double labelSize = screenWidth * 0.037;
+    double textFieldTextSize = screenWidth * 0.035;
+    double labelSize = screenWidth * 0.035;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,14 +42,13 @@ class requestUneditableTextfield extends StatelessWidget {
           height: textFieldHeight,
           decoration: BoxDecoration(
             color: Color(0xFFFFFAFA),
-            border: Border.all(color: Color(0xFF13131A), width: 0.2),
+            border: Border.all(color: Color(0xFF13131A), width: 0.1),
             borderRadius: BorderRadius.circular(15.0),
             boxShadow: [
               BoxShadow(
                 color: Color.fromARGB(36, 93, 93, 146),
-                blurRadius: 6,
+                blurRadius: 4,
                 offset: Offset(0, 2),
-                spreadRadius: 1
               )
             ]
           ),

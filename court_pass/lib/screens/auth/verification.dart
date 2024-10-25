@@ -2,11 +2,12 @@
 
 import 'dart:ui';
 
+import 'package:court_pass/classes/sports_person.dart';
 import 'package:court_pass/custom%20widgets/buttons/back_buttons.dart';
 import 'package:court_pass/custom%20widgets/backgrounds/backgrounds.dart';
 import 'package:court_pass/custom%20widgets/buttons/buttons.dart';
-import 'package:court_pass/screens/pages/home.dart';
-import 'package:court_pass/screens/pages/profile.dart';
+import 'package:court_pass/screens/auth/sports_person/fillup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -18,10 +19,14 @@ class VerificationPage extends StatefulWidget{
 }
 
 class _VerificationPageState extends State<VerificationPage> {
+
+  Future confirm() async{
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Fillup()));
+  }
+
+  final user = FirebaseAuth.instance.currentUser!;
+
   @override
-
-  final TextEditingController _codeController = TextEditingController();
-
   Widget build(BuildContext context){
     var screenWidth = MediaQuery.of(context).size.width;
     var screenHeight = MediaQuery.of(context).size.height;
@@ -55,7 +60,7 @@ class _VerificationPageState extends State<VerificationPage> {
 
           //TEXT AND TEXTFIELDS
           Positioned(
-            top: 340, left: 0, right: 0,
+            top: 300, left: 0, right: 0,
             child: Column(
               children: [
 
@@ -85,12 +90,12 @@ class _VerificationPageState extends State<VerificationPage> {
                         fontSize: mediumTextSize,
                         fontWeight: FontWeight.w300,
                       ),
-                      children: const [
+                      children: [
                         TextSpan(
                           text: 'Enter your verification code sent to\n'
                         ),
                         TextSpan(
-                          text: 'layug.jerryjohn@gmail.com',
+                          text: user.email!,
                           style: TextStyle(
                             fontWeight: FontWeight.bold
                           )
@@ -112,7 +117,6 @@ class _VerificationPageState extends State<VerificationPage> {
                   ),
                   child: Center(
                     child: TextField(
-                      controller: _codeController,
                       style: TextStyle(color: Color(0xFFFFFAFA)),
                       decoration: InputDecoration(
                         hintText: 'Enter Verification Code',
@@ -169,11 +173,7 @@ class _VerificationPageState extends State<VerificationPage> {
 
                 // CONFIRM BUTTON
                 GestureDetector(
-                  onTap: () {
-                    if(_codeController.text == "123456"){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-                        }
-                  },
+                  onTap: confirm,
                   child: MainButton('Confirm')
                 )
 

@@ -15,10 +15,10 @@ class PositiveButton extends StatelessWidget {
       height: screenHeight * 0.065,
 
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
-          colors: const [
+          colors: [
             Color(0xFFFF6F64),
             Color(0xFFFF4D82),
           ],
@@ -30,9 +30,9 @@ class PositiveButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            color: Color(0xFFFFFAFA),
-            fontSize: screenWidth * 0.042,
-            fontWeight: FontWeight.w500,
+            color: const Color(0xFFFFFAFA),
+            fontSize: screenWidth * 0.04,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),

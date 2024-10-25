@@ -12,4 +12,16 @@ class Sports {
     Sport("Bowling", 'assets/icons/bowling.svg'),
     Sport("Golf", 'assets/icons/golf.svg'),
   ];
+
+  String getSportName(String name) {
+    return sports.firstWhere(
+      (sport) => sport.sportName == name,
+    ).sportName;
+  }
+
+  String getSportIcon(String name) {
+    return sports.firstWhere(
+      (sport) => sport.sportName == name,
+    ).sportIcon;
+  }
 }

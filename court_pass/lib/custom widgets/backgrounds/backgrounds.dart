@@ -208,7 +208,7 @@ Widget facilityLoginBackground (){
                     Colors.black.withOpacity(0.5),
                     Colors.black.withOpacity(0.92),
                   ],
-                  stops: [0.0, 0.38, 0.54]
+                  stops: [0.0, 0.35, 0.48]
                 )
               ),
             ),

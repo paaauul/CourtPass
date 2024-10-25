@@ -2,7 +2,6 @@
 
 import 'dart:ui';
 
-import 'package:court_pass/classes/facility.dart';
 import 'package:court_pass/custom%20widgets/buttons/back_buttons.dart';
 import 'package:court_pass/custom%20widgets/backgrounds/backgrounds.dart';
 import 'package:court_pass/custom%20widgets/buttons/buttons.dart';
@@ -17,25 +16,21 @@ class FacilityLoginPage extends StatefulWidget{
 
 class _FacilityLoginPageState extends State<FacilityLoginPage> {
 
-  Color _textFieldColor = Color(0xFFFFFAFA);
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  
+  bool _isPasswordVisible = false;
 
-  String _codeHintText = "Enter Code";
-  Color _codeHintTextColor = Color(0xFFA19B9B);
-  Color _codeIconColor = Color(0x90888790);
+  Color emailBorderColor = const Color(0xFFFFFAFA);
+  Color emailTextColor = const Color(0xFFFFFAFA);
+  Color emailIconColor = const Color(0x90888790);
+  String emailHintText = "Email";
+  Color emailHintTextColor = const Color(0xFFA19B9B);
 
-  final TextEditingController _codeController = TextEditingController();
-
-  void _codeError(){
-    setState(() {
-      _textFieldColor = Color(0xFFEA4A4A);
-      
-      _codeHintText = "Invalid Code!";
-      _codeHintTextColor = Color(0xFFDE2C2C);
-      _codeIconColor = Color(0xFFEA4A4A);
-
-      _codeController.clear();
-    });
-  }
+  Color passwordBorderColor = const Color(0xFFFFFAFA);
+  Color passwordHintTextColor = const Color(0xFFA19B9B);
+  Color passwordIconColor = const Color(0x90888790);
+  String passwordText = "Password";
 
   @override
   Widget build(BuildContext context){
@@ -70,7 +65,7 @@ class _FacilityLoginPageState extends State<FacilityLoginPage> {
 
           //TEXT AND TEXTFIELDS
           Positioned(
-            top: 370, left: 0, right: 0,
+            top: 300, left: 0, right: 0,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -90,35 +85,89 @@ class _FacilityLoginPageState extends State<FacilityLoginPage> {
                 ),
 
                 SizedBox(height: 16),
+                
 
-                // CODE TEXT FIELD
+                // EMAIL TEXT FIELD
                 Container(
                   width: textFieldWidth,
                   height: textFieldHeight,
                   decoration: BoxDecoration(
-                    border: Border.all(color: _textFieldColor),
+                    border: Border.all(color: emailBorderColor),
                     borderRadius: BorderRadius.circular(23.0),
                   ),
                   child: Center(
                     child: TextField(
-                      controller: _codeController,
-                      style: TextStyle(color: Color(0xFFFFFAFA)),
+                      controller: _emailController,
+                      style: TextStyle(color: const Color(0xFFFFFAFA), fontSize: textFieldTextSize),
                       decoration: InputDecoration(
-                        hintText: _codeHintText,
+                        hintText: emailHintText,
                         hintStyle: TextStyle(
-                            color: _codeHintTextColor,
-                            fontSize: textFieldTextSize,
-                            fontWeight: FontWeight.w300),
-                        contentPadding: EdgeInsets.symmetric(horizontal: 17, vertical: 12.9),
+                          color: emailHintTextColor,
+                          fontSize: textFieldTextSize,
+                          fontWeight: FontWeight.w300,
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 11.5),
                         border: InputBorder.none,
                         prefixIcon: Padding(
-                          padding: EdgeInsets.only(left: 12, right: 6),
+                          padding: const EdgeInsets.only(left: 12, right: 4),
+                          child: Icon(
+                            Icons.email,
+                            color: emailIconColor,
+                            size: screenWidth * 0.05,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 17),
+
+                // PASSWORD TEXT FIELD
+                Container(
+                  width: textFieldWidth,
+                  height: textFieldHeight,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: passwordBorderColor),
+                    borderRadius: BorderRadius.circular(23.0),
+                  ),
+                  child: Center(
+                    child: TextField(
+                      controller: _passwordController,
+                      style: TextStyle(color: const Color(0xFFFFFAFA), fontSize: textFieldTextSize),
+                      obscureText: !_isPasswordVisible,
+                      decoration: InputDecoration(
+                        hintText: passwordText,
+                        hintStyle: TextStyle(
+                          color: passwordHintTextColor,
+                          fontSize: textFieldTextSize,
+                          fontWeight: FontWeight.w300,
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 11.5),
+                        border: InputBorder.none,
+                        prefixIcon: Padding(
+                          padding: const EdgeInsets.only(left: 12, right: 6),
                           child: Icon(
                             Icons.lock,
-                            color: _codeIconColor,
+                            color: passwordIconColor,
                             size: screenWidth * 0.05,
-                          )
-                        )
+                          ),
+                        ),
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _isPasswordVisible = !_isPasswordVisible; // Toggle password visibility
+                              });
+                            },
+                            child: Icon(
+                              _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                              color: const Color(0x90888790),
+                              size: screenWidth * 0.05,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ),

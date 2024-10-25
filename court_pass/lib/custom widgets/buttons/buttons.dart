@@ -13,8 +13,8 @@ class MainButton extends StatelessWidget {
     var screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
-      width: screenWidth * 0.82,
-      height: screenHeight * 0.066,
+      width: screenWidth * 0.84,
+      height: screenHeight * 0.068,
 
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -40,7 +40,7 @@ class MainButton extends StatelessWidget {
           text,
           style: TextStyle(
             color: Color(0xFFFFFAFA),
-            fontSize: screenWidth * 0.042,
+            fontSize: screenWidth * 0.04,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -74,7 +74,7 @@ class SmallButton extends StatelessWidget {
           ],
           stops: [-0.5, 0.92],
         ),
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(25.0),
         boxShadow: const [
           BoxShadow(
             color: Color.fromARGB(64, 66, 99, 143),

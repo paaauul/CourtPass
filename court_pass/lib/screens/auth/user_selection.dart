@@ -7,6 +7,7 @@ import 'package:court_pass/custom%20widgets/buttons/buttons.dart';
 import 'package:court_pass/screens/auth/facility/facility_login.dart';
 import 'package:court_pass/screens/auth/sports_person/sportsperson_signup.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class UserSelectionPage extends StatelessWidget{
   const UserSelectionPage({super.key});
@@ -14,7 +15,6 @@ class UserSelectionPage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     var screenWidth = MediaQuery.of(context).size.width;
-    var screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -33,15 +33,15 @@ class UserSelectionPage extends StatelessWidget{
 
                 //QUESTION
                 Text(
-                  'How will you be using the app?',
+                  'How will you be using the Court Pass?',
                     style: TextStyle(
                       color: Color(0xFFFFFAFA),
-                      fontSize: screenWidth * 0.054,
+                      fontSize: screenWidth * 0.05,
                       fontWeight: FontWeight.bold
                     ),
                 ),
                 
-                SizedBox(height: 16),
+                SizedBox(height: 18),
 
                 //SPORTS PERSON BUTTON
                 InkWell(
@@ -51,7 +51,7 @@ class UserSelectionPage extends StatelessWidget{
                   child: MainButton('I am a Sports Person'),
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 8),
 
                 //FACILITY PERSONNEL BUTTON
                 InkWell(

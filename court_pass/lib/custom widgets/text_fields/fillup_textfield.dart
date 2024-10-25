@@ -2,11 +2,19 @@
 
 import 'package:flutter/material.dart';
 
-class fillupTextField extends StatelessWidget {
+class fillupTextField extends StatefulWidget {
   final String label;
   final String text;
+  final bool isEditable;
 
-  fillupTextField(this.label, this.text);
+  fillupTextField(this.label, this.text, this.isEditable, _controller);
+
+  @override
+  State<fillupTextField> createState() => _fillupTextFieldState();
+}
+
+class _fillupTextFieldState extends State<fillupTextField> {
+  final TextEditingController? _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +34,7 @@ class fillupTextField extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(left: screenWidth * 0.025),
           child: Text(
-            "$label:",
+            "${widget.label}:",
             style: TextStyle(
               fontFamily: 'Poppins',
               fontSize: labelSize,
@@ -54,9 +62,11 @@ class fillupTextField extends StatelessWidget {
           ),
           child: Center(
             child: TextField(
+              controller: _controller,
+              readOnly: !widget.isEditable,
               style: TextStyle(color: Color(0xFF13131A), fontSize: textFieldTextSize),
               decoration: InputDecoration(
-                hintText: text,
+                hintText: widget.text,
                 hintStyle: TextStyle(
                   color: Color(0xFF9B9797),
                   fontFamily: 'Inter',
